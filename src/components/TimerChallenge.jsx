@@ -12,6 +12,7 @@ export default function TimerChallenge({ title, targetTime }) {
 
   const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
 
+  //   stop the timer if the conditional is met
   if (timeRemaining <= 0) {
     clearInterval(timer.current);
     dialog.current.open();
@@ -27,6 +28,7 @@ export default function TimerChallenge({ title, targetTime }) {
     }, 10);
   }
 
+  //   manually stop the timer
   function handleStop() {
     dialog.current.open();
     clearInterval(timer.current);
